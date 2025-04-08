@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulário de Motorista</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <form id="form-motorista">
+    <h2>Registro do Motorista</h2>
+    <label for="nome">Nome do motorista:</label>
+    <input type="text" id="nome" name="nome" required placeholder="Digite o nome completo">
+    
+    <label for="data">Data:</label>
+    <input type="date" id="data" name="data" required>
+
+    <label for="placa">Placa do carro:</label>
+    <input type="text" id="placa" name="placa" required>
+
+    <label for="horaSaida">Hora de saída:</label>
+    <input type="time" id="horaSaida" name="horaSaida" required>
+
+    <label for="kmSaida">Quilometragem na saída:</label>
+    <input type="number" id="kmSaida" name="kmSaida" required>
+
+    <label for="horaChegada">Hora de chegada:</label>
+    <input type="time" id="horaChegada" name="horaChegada" required>
+
+    <label for="observacao">Observação:</label>
+    <textarea id="observacao" name="observacao" rows="4" placeholder="Digite qualquer observação ou recorrência..."></textarea>
+
+    <button type="submit">Enviar</button>
+  </form>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
