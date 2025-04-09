@@ -18,7 +18,7 @@ document.getElementById('form-motorista').addEventListener('submit', function (e
     console.log("Hora de Chegada:", horaChegada);
     console.log("Observação:", observacao);
   
-    alert("Formulário enviado com sucesso!");
+    
   });
   
 
