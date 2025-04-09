@@ -1,145 +1,204 @@
 /* Fonte moderna e profissional */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 20px;
-    background: linear-gradient(to right top, #f5f7fa, #e4ecf7, #d3e2f3, #bfd8ef, #a9ceea);
-    min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background: linear-gradient(to right top, #f5f7fa, #e4ecf7, #d3e2f3, #bfd8ef, #a9ceea);
+  min-height: 100vh;
+}
+
+/* Animação de entrada elegante */
+form {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 600px;
+  margin: 40px auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.6s ease both;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
   }
-  
-  /* Animação de entrada elegante */
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Título */
+form h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #131720;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+/* Linha elegante abaixo do título */
+form h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 80%;
+  max-width: 300px;
+  height: 3px;
+  background-color: #3b82f6;
+  transform: translateX(-50%);
+  border-radius: 5px;
+}
+
+/* Labels elegantes */
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* Inputs e textarea */
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  background-color: #f9fafb;
+  font-size: 16px; /* Atualizado para evitar zoom no iOS */
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+  color: #111827;
+  animation: fadeIn 0.4s ease forwards;
+  opacity: 0;
+}
+
+/* Animação de entrada suave para inputs */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Efeito ao focar */
+input:focus,
+textarea:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  outline: none;
+}
+
+/* Foco visível para acessibilidade */
+input:focus-visible,
+textarea:focus-visible,
+button:focus-visible {
+  outline: 2px dashed #3b82f6;
+  outline-offset: 4px;
+}
+
+/* Estilo do placeholder */
+::placeholder {
+  color: #9ca3af;
+  font-style: italic;
+}
+
+/* Botão */
+button {
+  margin-top: 25px;
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+button:hover {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* Alertas */
+.alert {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.alert-success {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.alert-error {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
   form {
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 12px;
-    max-width: 600px;
-    margin: 40px auto;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
-    animation: fadeInUp 0.6s ease both;
+    padding: 24px;
+    margin: 20px;
   }
-  
-  @keyframes fadeInUp {
-    0% {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  /* Título */
+
   form h2 {
-    text-align: center;
-    margin-bottom: 25px;
-    color: #131720;
-    font-size: 32px;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    position: relative;
-    padding-bottom: 10px;
+    font-size: 24px;
   }
-  
-  /* Linha elegante abaixo do título */
-  form h2::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 80%;
-    max-width: 300px;
-    height: 3px;
-    background-color: #3b82f6;
-    transform: translateX(-50%);
-    border-radius: 5px;
+}
+
+@media (max-width: 600px) {
+  form {
+    padding: 20px;
+    margin: 20px;
   }
-  
-  /* Labels elegantes */
-  label {
-    display: block;
-    margin-top: 15px;
-    font-weight: 600;
-    color: #111827;
+
+  form h2 {
+    font-size: 20px;
   }
-  
-  /* Inputs e textarea */
+
+  button {
+    font-size: 15px;
+    padding: 10px;
+  }
+}
+
+/* Ajuste extra para telas bem pequenas */
+@media (max-width: 400px) {
+  form {
+    padding: 16px;
+    margin: 16px 12px;
+  }
+
   input,
   textarea {
-    width: 100%;
-    padding: 12px;
-    margin-top: 6px;
-    border-radius: 8px;
-    border: 1px solid #d1d5db;
-    background-color: #f9fafb;
-    font-size: 14px;
-    transition: border 0.3s ease, box-shadow 0.3s ease;
-    box-sizing: border-box;
-    color: #111827;
+    font-size: 15px;
   }
-  
-  /* Efeito ao focar */
-  input:focus,
-  textarea:focus {
-    border-color: #3b82f6;
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
-    outline: none;
-  }
-  
-  /* Botão */
+
   button {
-    margin-top: 25px;
-    width: 100%;
-    padding: 12px;
-    background: linear-gradient(135deg, #3b82f6, #2563eb);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    font-size: 15px;
+    padding: 10px;
   }
-  
-  /* Hover no botão */
-  button:hover {
-    background: linear-gradient(135deg, #2563eb, #1d4ed8);
-    transform: translateY(-2px);
-  }
-  
-  button:active {
-    transform: translateY(0);
-    box-shadow: none;
-  }
-  
-  /* Responsividade extra */
-  @media (max-width: 768px) {
-    form {
-      padding: 24px;
-      margin: 20px;
-    }
-  
-    form h2 {
-      font-size: 24px;
-    }
-  }
-  
-  @media (max-width: 600px) {
-    form {
-      padding: 20px;
-      margin: 20px;
-    }
-  
-    form h2 {
-      font-size: 20px;
-    }
-  
-    button {
-      font-size: 15px;
-      padding: 10px;
-    }
-  }
-  
+}
