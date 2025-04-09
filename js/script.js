@@ -69,30 +69,27 @@ document.getElementById('form-motorista').addEventListener('submit', function (e
 
 
   // Evento de envio do formulário
-  document.getElementById('form-motorista').addEventListener('submit', function (e) {
+   // Envia para SheetMonkey
+   document.getElementById('form-motorista').addEventListener('submit', function (e) {
     e.preventDefault();
-  
-    const campos = [
-      'nome', 'data', 'placa', 'horaSaida', 
-      'kmSaida', 'horaChegada', 'observacao'
-    ];
-  
-    const dados = campos.reduce((obj, campo) => {
-      obj[campo] = document.getElementById(campo).value;
-      return obj;
-    }, {});
-  
-    // Envia os dados para a API do SheetMonkey
+
+    const campos = ['nome', 'data', 'placa', 'horaSaida', 'kmSaida', 'horaChegada', 'observacao'];
+    const dados = {};
+    campos.forEach((campo) => {
+      dados[campo] = document.getElementById(campo).value;
+    });
+
+    const botao = document.querySelector("#form-motorista button");
+    botao.disabled = true;
+    botao.textContent = "Enviando...";
+
     fetch("https://api.sheetmonkey.io/form/oRbNLdwPJBvteDgUV2e2ys", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(dados)
     })
     .then(response => {
       if (response.ok) {
-        // Limpa localStorage e o formulário
         campos.forEach((campo) => localStorage.removeItem(campo));
         alert("Formulário enviado com sucesso!");
         document.getElementById('form-motorista').reset();
@@ -101,10 +98,15 @@ document.getElementById('form-motorista').addEventListener('submit', function (e
       }
     })
     .catch(error => {
-      console.error("Erro na requisição:", error);
+      console.error("Erro:", error);
       alert("Erro ao enviar. Verifique sua conexão.");
+    })
+    .finally(() => {
+      botao.disabled = false;
+      botao.textContent = "Enviar";
     });
   });
+
   
 
 
