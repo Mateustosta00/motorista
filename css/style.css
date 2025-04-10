@@ -7,6 +7,41 @@ body {
   min-height: 100vh;
 }
 
+
+
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: #007BFF;
+  color: white;
+}
+
+.header img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Animação de entrada elegante */
 form {
   background-color: #ffffff;

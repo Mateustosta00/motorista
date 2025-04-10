@@ -73,7 +73,7 @@ document.getElementById('form-motorista').addEventListener('submit', function (e
    document.getElementById('form-motorista').addEventListener('submit', function (e) {
     e.preventDefault();
 
-    const campos = ['nome', 'data', 'placa', 'horaSaida', 'kmSaida', 'horaChegada', 'observacao'];
+    const campos = ['nome', 'data', 'placa', 'horaSaida', 'kmSaida', 'horaChegada','kmchegada', 'observacao'];
     const dados = {};
     campos.forEach((campo) => {
       dados[campo] = document.getElementById(campo).value;
@@ -109,6 +109,30 @@ document.getElementById('form-motorista').addEventListener('submit', function (e
 
   
 
+
+
+
+  window.onload = function () {
+    const nome = localStorage.getItem("motoristaNome");
+    const imagem = localStorage.getItem("motoristaImagem");
+  
+    // Preenche os dados do cabeçalho (como já fazíamos)
+    if (!nome || !imagem) {
+      window.location.href = "user.html";
+      return;
+    }
+  
+    document.getElementById("nomeMotorista").textContent = nome;
+    document.getElementById("fotoMotorista").src = imagem;
+  
+    // Preenche automaticamente o campo de nome no formulário
+    const inputNome = document.getElementById("nome");
+    if (inputNome) {
+      inputNome.value = nome;
+    }
+  };
+  
+  
 
 
 

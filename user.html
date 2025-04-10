@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Acesso dos Motoristas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="caixa-central" id="caixa">
+    <h1 onclick="mostrarLista()">Login</h1>
+
+    <ul id="lista-motoristas">
+      <li onclick="mostrarLogin('motorista1')">Mateus</li>
+      <li onclick="mostrarLogin('motorista2')">Felipe</li>
+      <li onclick="mostrarLogin('motorista3')">Jonas</li>
+    </ul>
+
+    <div id="login-area">
+      <img id="foto-motorista" src="" alt="Foto do Motorista">
+      <input type="password" id="senha" placeholder="Digite sua senha">
+      
+<input type="checkbox" id="mostrarSenha" onclick="toggleSenha()"> 
+<script>
+    function toggleSenha() {
+      const senhaInput = document.getElementById("senha");
+      const tipo = senhaInput.type === "password" ? "text" : "password";
+      senhaInput.type = tipo;
+    }
+
+  </script>
+      <button onclick="verificarSenha()">Entrar</button>
+      <div id="erro-senha"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

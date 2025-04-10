@@ -7,10 +7,23 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+  <header class="header">
+    <img id="fotoMotorista" src="" alt="Foto do Motorista">
+    <h2 id="nomeMotorista"></h2>
+  </header>
+
+  <main>
+    <!-- Aqui vai o conteúdo do registro, que você quiser colocar -->
+    <p>Bem-vindo! Aqui você pode fazer seu registro de trabalho.</p>
+  </main>
+
+
   <form id="form-motorista">
     <h2>Registro do Motorista</h2>
     <label for="nome">Nome do motorista:</label>
-    <input type="text" id="nome" name="nome" required placeholder="Digite o nome completo">
+    <input type="text" id="nome" name="nome" placeholder="Nome do motorista" readonly>
+
     
     <label for="data">Data:</label>
     <input type="date" id="data" name="data" required>
@@ -26,6 +39,9 @@
 
     <label for="horaChegada">Hora de chegada:</label>
     <input type="time" id="horaChegada" name="horaChegada" required>
+    
+    <label for="kmchegada">Quilometragem da chegada:</label>
+    <input type="number" id="kmchegada" name="kmchegada" required>
 
     <label for="observacao">Observação:</label>
     <textarea id="observacao" name="observacao" rows="4" placeholder="Digite qualquer observação ou recorrência..."></textarea>
