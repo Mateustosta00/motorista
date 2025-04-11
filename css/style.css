@@ -27,21 +27,6 @@ body {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Animação de entrada elegante */
 form {
   background-color: #ffffff;
@@ -257,3 +242,33 @@ button:active {
     padding: 10px;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+button.btn-sair {
+  all: unset;
+  position: absolute; /* <--- ESSENCIAL para aparecer no canto da tela */
+  top: 25px;
+  right: 20px;
+  padding: 6px 14px;
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 35px;
+  cursor: pointer;
+  font-size: 15px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1000;
+}
+
+

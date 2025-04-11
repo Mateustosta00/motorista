@@ -20,8 +20,10 @@ document.getElementById('form-motorista').addEventListener('submit', function (e
   
     
   });
+  function sair() {
+    window.location.href = "user.html";
+  }
   
-
 
   //função de salvar dados no localsto//
   window.addEventListener('DOMContentLoaded', () => {
